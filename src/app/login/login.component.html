@@ -1,0 +1,13 @@
+<div nz-row nzJustify="space-around" style="padding: 100px">
+  <div nz-col nzSpan="4">
+    <input nz-input placeholder="请输入用户名" [(ngModel)]="username"/>
+    <nz-input-group [nzSuffix]="suffixTemplate">
+      <input [type]="passwordVisible ? 'text' : 'password'" nz-input placeholder="input password"
+             [(ngModel)]="password"/>
+    </nz-input-group>
+    <ng-template #suffixTemplate>
+      <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="passwordVisible = !passwordVisible"></i>
+    </ng-template>
+    <button nz-button nzType="primary" nzBlock>登录</button>
+  </div>
+</div>
