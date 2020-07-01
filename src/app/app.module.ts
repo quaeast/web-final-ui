@@ -10,15 +10,29 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import { LoginComponent } from './login/login.component';
-import {NzButtonModule, NzCheckboxModule, NzFormModule, NzGridModule, NzIconModule, NzInputModule} from "ng-zorro-antd";
+import { LoginComponent } from './components/login/login.component';
+import {
+  NgZorroAntdModule, NzBreadCrumbModule,
+  NzButtonModule,
+  NzCheckboxModule,
+  NzFormModule,
+  NzGridModule,
+  NzIconModule,
+  NzInputModule, NzLayoutModule, NzMenuModule
+} from "ng-zorro-antd";
+import { StudentInformationComponent } from './components/student-information/student-information.component';
+import { GetAnswerComponent } from './components/get-answer/get-answer.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    StudentInformationComponent,
+    GetAnswerComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -27,12 +41,7 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    NzGridModule,
-    NzButtonModule,
-    NzInputModule,
-    NzFormModule,
-    NzCheckboxModule,
-    NzIconModule
+    NgZorroAntdModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

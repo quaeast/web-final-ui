@@ -8,6 +8,11 @@
     <ng-template #suffixTemplate>
       <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="passwordVisible = !passwordVisible"></i>
     </ng-template>
-    <button nz-button nzType="primary" nzBlock>登录</button>
+    <a routerLink="/student-information">
+      <button nz-button nzType="primary" nzBlock (click)="onLogin()">登录</button>
+    </a>
   </div>
 </div>
+{{token}}
+
+<a routerLink="/student-information">link</a>
