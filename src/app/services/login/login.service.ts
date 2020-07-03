@@ -14,7 +14,19 @@ export class LoginService {
 
   getToken(username, password) {
     return this.http
-      .post(ConfigService.get('api')+'api-token-auth/', {"username": username, "password": password});
+      .post(ConfigService.get('api') + 'api-token-auth/', {"username": username, "password": password});
+  }
+
+  logOn(username, email, password) {
+    return this.http
+      .post(
+        ConfigService.get('api') + 'logon/',
+        {
+          'username': username,
+          'email': email,
+          'password': password
+        }
+      );
   }
 
 }

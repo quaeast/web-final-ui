@@ -21,10 +21,16 @@ export class StudentInformationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.studentService.getStudent().subscribe(students => {
-      this.student = students['results'][0];
-      console.log(students['results'][0]);
-    });
+    this.studentService.getStudent().subscribe(
+      student => {
+        this.student = student;
+        console.log(student);
+        console.log(this.student);
+      },
+      error => {
+        this.student = new Student();
+        console.log('no student at present!');
+      });
   }
 
   onClickSubmit(): void {

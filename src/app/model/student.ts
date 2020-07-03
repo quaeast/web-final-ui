@@ -1,20 +1,22 @@
 export class Student {
-  name: string = null;
-  schoolId: string = null;
-  gender: string = null;
+  name: string = '';
+  schoolId: string = '';
+  gender: string = '';
   birthday: string = '1998-1-1';
-  nation: string = null;
-  politicsStatus: string = null;
-  isArmy: string = null;
-  maritalStatus: string = null;
-  universityOfGraduation: string = null;
-  majorOfGraduation: string = null;
-  schoolOfGraduation: string = null;
+  nation: string = '';
+  politicsStatus: string = '';
+  isArmy: string = '';
+  maritalStatus: string = '';
+  universityOfGraduation: string = '';
+  majorOfGraduation: string = '';
+  schoolOfGraduation: string = '';
   UndergraduateYear: string = '2017-9-1';
-  address: string = null;
-  zipCode: string = null;
-  email: string = null;
-  cellPhone: string = null;
+  address: string = '';
+  zipCode: string = '';
+  email: string = '';
+  cellPhone: string = '';
+
+  result: string = '待审核';
 
   constructor() {
   }

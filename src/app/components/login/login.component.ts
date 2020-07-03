@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from "../../services/login/login.service";
 import {ConfigService} from "../../services/config/config.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {NzMessageService} from "ng-zorro-antd";
 
 
 @Component({
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private message: NzMessageService
   ) {
   }
 
@@ -33,7 +35,17 @@ export class LoginComponent implements OnInit {
           ConfigService.set('token', response['token']);
           this.router.navigate(['/layout/billboard']);
         },
-        error => this.loginInformation = 'password wrong'
+        error => this.message.info('password wrong')
       );
+  }
+
+  onLogon() {
+    this.loginService
+      .logOn(this.username, '', this.password)
+      .subscribe(
+        response => this.message.info('logon succeed')
+        ,
+        error => this.message.info('invalid username')
+      )
   }
 }

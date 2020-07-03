@@ -1,13 +1,17 @@
 <h2 nz-typography>录取结果</h2>
 <span class="get-answer-label">姓名：</span>
+{{student.name}}
 <br/>
 <br/>
-<span class="get-answer-label">填报学院：</span>
+<span class="get-answer-label">本科学校：</span>
+{{student.universityOfGraduation}}
 <br/>
 <br/>
 <span class="get-answer-label">材料是否已收：</span>
+{{student.name?'已接收':'未接收'}}
 <br/>
 <br/>
 <span class="get-answer-label">学院初选结果：</span>
+{{student.result}}
 <br/>
 <br/>

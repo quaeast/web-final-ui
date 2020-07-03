@@ -13,7 +13,7 @@ export class StudentService {
 
   getStudent() {
     return this.http
-      .get<Array<Student>>(ConfigService.get('api') + 'student/', {
+      .get<Student>(ConfigService.get('api') + 'student/', {
         headers: {'Authorization': 'JWT ' + ConfigService.get('token')},
       });
   }
