@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import {ConfigService} from "./app/services/config/config.service";
 
-ConfigService.set('api', 'http://127.0.0.1:8000/');
+ConfigService.set('api', environment.api);
 
 
 if (environment.production) {
