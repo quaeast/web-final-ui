@@ -1,32 +1,70 @@
-<nz-layout class="layout">
-  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
-    <div class="logo"></div>
-    <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
-        <i nz-icon nzType="user"></i>
-        <span>nav 1</span>
-      </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="video-camera"></i>
-        <span>nav 2</span>
-      </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="upload"></i>
-        <span>nav 3</span>
-      </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="user"></i>
-        <span>nav 4</span>
-      </li>
-    </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-header></nz-header>
-    <nz-content>
-      <div class="inner-content">
-        Content
-      </div>
-    </nz-content>
-    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
-  </nz-layout>
-</nz-layout>
+<div class="student-info-input">
+  <span class="student-info-input-label"> 学生姓名 </span>
+  <!--  ?. angular in action p41-->
+  <input nz-input placeholder="学生姓名" [(ngModel)]="student.name"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 学生学号 </span>
+  <input nz-input placeholder="学生学号" [(ngModel)]="student.schoolId"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 性别 </span>
+  <input nz-input placeholder="性别" [(ngModel)]="student.gender"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 出生日期 </span>
+  <nz-date-picker [nzFormat]="dateFormat" [(ngModel)]="student.birthday"></nz-date-picker>
+  <br/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 民族 </span>
+  <input nz-input placeholder="民族" [(ngModel)]="student.nation"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 政治面貌 </span>
+  <input nz-input placeholder="政治面貌" [(ngModel)]="student.politicsStatus"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 退役军人 </span>
+  <input nz-input placeholder="退役军" [(ngModel)]="student.isArmy"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 婚否 </span>
+  <input nz-input placeholder="婚否" [(ngModel)]="student.maritalStatus"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 毕业单位 </span>
+  <input nz-input placeholder="毕业单位" [(ngModel)]="student.universityOfGraduation"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 毕业专业 </span>
+  <input nz-input placeholder="毕业专业" [(ngModel)]="student.majorOfGraduation"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 毕业院系所 </span>
+  <input nz-input placeholder="毕业院系所" [(ngModel)]="student.schoolOfGraduation"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 本科入学年月 </span>
+  <nz-date-picker [nzFormat]="dateFormat" [(ngModel)]="student.UndergraduateYear"></nz-date-picker>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 通讯地址 </span>
+  <input nz-input placeholder="通讯地址" [(ngModel)]="student.address"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 邮政编码 </span>
+  <input nz-input placeholder="邮政编码" [(ngModel)]="student.zipCode"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 电子邮箱 </span>
+  <input nz-input placeholder="电子邮件" [(ngModel)]="student.email"/>
+  <br/>
+  <br/>
+  <span class="student-info-input-label"> 移动电话 </span>
+  <input nz-input placeholder="移动电话" [(ngModel)]="student.cellPhone"/>
+  <br/>
+  <br/>
+</div>
+
+<button nz-button nzType="primary" nzBlock (click)="onClickSubmit()">提交</button>

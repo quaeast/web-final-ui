@@ -23,6 +23,7 @@ import {
 import { StudentInformationComponent } from './components/student-information/student-information.component';
 import { GetAnswerComponent } from './components/get-answer/get-answer.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { BillboardComponent } from './components/billboard/billboard.component';
 
 registerLocaleData(zh);
 
@@ -32,7 +33,8 @@ registerLocaleData(zh);
     LoginComponent,
     StudentInformationComponent,
     GetAnswerComponent,
-    LayoutComponent
+    LayoutComponent,
+    BillboardComponent
   ],
   imports: [
     BrowserModule,

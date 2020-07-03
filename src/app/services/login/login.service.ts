@@ -9,13 +9,12 @@ import {ConfigService} from "../config/config.service";
 })
 export class LoginService {
 
-
   constructor(private http: HttpClient) {
   }
 
   getToken(username, password) {
     return this.http
-      .post(ConfigService.get('get_token'), {"username": username, "password": password});
+      .post(ConfigService.get('api')+'api-token-auth/', {"username": username, "password": password});
   }
 
 }

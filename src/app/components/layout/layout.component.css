@@ -5,8 +5,8 @@
 
 .logo {
   height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+  /*background: rgba(255, 255, 255, 0.2);*/
+  margin: 16px 16px 30px 16px;
 }
 
 nz-header {

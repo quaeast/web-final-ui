@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from "../../services/login/login.service";
 import {ConfigService} from "../../services/config/config.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -13,9 +14,12 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   passwordVisible = false;
-  token: string;
+  loginInformation: string;
 
-  constructor(private loginService: LoginService) {
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) {
   }
 
   ngOnInit(): void {
@@ -26,10 +30,10 @@ export class LoginComponent implements OnInit {
       .getToken(this.username, this.password)
       .subscribe(
         response => {
-          this.token = response['token'];
           ConfigService.set('token', response['token']);
+          this.router.navigate(['/layout/billboard']);
         },
-        error => this.token = 'password wrong'
+        error => this.loginInformation = 'password wrong'
       );
   }
 }
